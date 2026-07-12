@@ -60,10 +60,15 @@
             </div>
           </div>
 
-          <button class="hero-video" type="button" data-open-video aria-label="Reproducir video de invitación de Harold Mesa">
-            <img src="../assets/harold-stage.jpg" alt="Harold Mesa presentando en una conferencia empresarial" />
-            <span class="hero-video-play"><span class="play-icon" aria-hidden="true"></span></span>
-          </button>
+          <div class="hero-video" aria-label="Video de invitación de Harold Mesa">
+            <iframe
+              src="https://www.youtube.com/embed/C-FHpbc70VI?si=73bR7Nq3zHUvaKym"
+              title="Video de invitación de Harold Mesa"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
 
           <div class="video-context" aria-label="Presentador de la masterclass">
             <span>Harold Mesa</span>
@@ -377,14 +382,6 @@
     </footer>
 
     <a class="mobile-cta" href="#registro">Reservar lugar</a>
-
-    <dialog class="video-dialog" aria-labelledby="video-title">
-      <button class="dialog-close" type="button" data-close-video aria-label="Cerrar video">×</button>
-      <p class="section-index">VIDEO DE INVITACIÓN</p>
-      <h2 id="video-title">El video oficial todavía no fue conectado.</h2>
-      <p>Este espacio reproducirá la invitación de Harold Mesa antes de publicar la página.</p>
-      <button class="button button-primary" type="button" data-close-video>Continuar revisando</button>
-    </dialog>
 
     <script src="./script.js"></script>
   </body>
