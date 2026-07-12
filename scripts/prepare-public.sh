@@ -14,3 +14,7 @@ COPYFILE_DISABLE=1 cp -X "$ROOT_DIR/assets/"* "$PUBLIC_DIR/assets/"
 
 perl -0pi -e 's#\.\./assets/#./assets/#g' "$PUBLIC_DIR/index.html"
 find "$PUBLIC_DIR" -name '._*' -type f -delete
+
+cp "$PUBLIC_DIR/index.html" "$ROOT_DIR/index.html"
+cp "$PUBLIC_DIR/styles.css" "$ROOT_DIR/styles.css"
+cp "$PUBLIC_DIR/script.js" "$ROOT_DIR/script.js"

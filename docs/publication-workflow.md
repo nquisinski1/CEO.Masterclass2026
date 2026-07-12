@@ -9,9 +9,9 @@ Manter a landing `ceo.stepupandco.com` ajustavel a partir deste projeto no Codex
 - Fonte de verdade: este repositorio Git, pasta `masterclass-a-charly`.
 - Repositorio GitHub: `nquisinski1/CEO.Masterclass2026`.
 - Codigo editavel: `src/index.html`, `src/styles.css`, `src/script.js` e `assets/`.
-- Pacote publicado: `public/`, gerado por `scripts/prepare-public.sh`.
+- Pacote publicado: arquivos estaticos na raiz do repositorio (`index.html`, `styles.css`, `script.js`) e, quando usado por workflow FTP, `public/`.
 - Dominio de producao: `ceo.stepupandco.com`.
-- Deploy recomendado: GitHub Actions envia a pasta `public/` para a pasta do dominio na Hostinger por FTP/SFTP.
+- Deploy recomendado: Hostinger Git Deploy serve a raiz do repositorio. O workflow GitHub Actions pode enviar `public/` por FTP/SFTP se essa rota for ativada depois.
 
 ## Secrets necessarios no GitHub
 
@@ -29,7 +29,7 @@ Nao salvar credenciais em arquivos do projeto.
 1. Abrir este projeto no Codex pela pasta `/Volumes/Toshiba/CODEX.CODE /Agencia 007/masterclass-a-charly`.
 2. Pedir ajustes nesta conversa/projeto.
 3. Validar localmente.
-4. Gerar `public/` com `sh scripts/prepare-public.sh`.
+4. Gerar os arquivos estaticos de deploy com `sh scripts/prepare-public.sh`.
 5. Commitar e enviar para `main`.
 6. O GitHub Actions publica automaticamente na Hostinger.
 7. Conferir `https://ceo.stepupandco.com`.

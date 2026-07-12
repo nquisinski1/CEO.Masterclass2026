@@ -14,13 +14,13 @@ Abra `src/index.html` no navegador. A pagina funciona localmente sem servidor.
 
 Dominio de producao planejado: `ceo.stepupandco.com`.
 
-O projeto usa `src/` como codigo-fonte e `public/` como pacote de publicacao para a Hostinger. Gere o pacote com:
+O projeto usa `src/` como codigo-fonte. A Hostinger publica a raiz do repositorio, entao `index.html`, `styles.css` e `script.js` na raiz sao copias geradas para deploy. Gere/atualize esses arquivos com:
 
 ```sh
 sh scripts/prepare-public.sh
 ```
 
-O workflow `.github/workflows/deploy-hostinger.yml` publica `public/` na Hostinger quando houver push para `main`, desde que os secrets FTP/SFTP estejam configurados no GitHub.
+O workflow `.github/workflows/deploy-hostinger.yml` tambem pode publicar `public/` na Hostinger quando houver push para `main`, desde que os secrets FTP/SFTP estejam configurados no GitHub.
 
 Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 
@@ -29,13 +29,14 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 - `src/index.html`: estrutura, conteudo e formulario.
 - `src/styles.css`: direcao visual e responsividade.
 - `src/script.js`: video, formulario e interacoes.
+- `index.html`, `styles.css`, `script.js`: copias geradas para a Hostinger servir pela raiz do repositorio.
 - `assets/`: logos e fotografias reais de Harold Mesa.
 - `docs/masterclass-content-and-landing-strategy.md`: estrategia de conteudo.
 - `docs/landing-content-models-stepup.md`: modelos segmentados.
 - `docs/source-extracts.txt`: extracoes do material original.
 - `docs/conversion-blueprint.md`: arquitetura de conversao.
 - `docs/publication-workflow.md`: operacao GitHub -> Hostinger -> dominio.
-- `scripts/prepare-public.sh`: gera a pasta `public/` para deploy.
+- `scripts/prepare-public.sh`: gera a pasta `public/` e atualiza os arquivos estaticos da raiz.
 - `.github/workflows/deploy-hostinger.yml`: deploy automatico para Hostinger via GitHub Actions.
 
 ## Estado atual
