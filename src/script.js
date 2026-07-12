@@ -1,35 +1,37 @@
-const countdown = document.querySelector(".countdown strong");
-const form = document.querySelector(".form");
+const form = document.querySelector(".registration-form");
+const formMessage = document.querySelector(".form-message");
+const videoDialog = document.querySelector(".video-dialog");
+const videoOpeners = document.querySelectorAll("[data-open-video]");
+const videoClosers = document.querySelectorAll("[data-close-video]");
 
-function updateCountdown() {
-  if (!countdown) return;
-
-  const deadline = document.querySelector(".countdown")?.dataset.deadline;
-  if (!deadline) {
-    countdown.textContent = "-- : -- : --";
-    return;
-  }
-
-  const diff = new Date(deadline).getTime() - Date.now();
-  if (diff <= 0) {
-    countdown.textContent = "ao vivo";
-    return;
-  }
-
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const minutes = Math.floor((diff % 3600000) / 60000);
-
-  countdown.textContent = `${String(days).padStart(2, "0")}d : ${String(hours).padStart(2, "0")}h : ${String(minutes).padStart(2, "0")}m`;
-}
-
-if (form) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const button = form.querySelector("button");
-    if (button) button.textContent = "Registro recebido";
+videoOpeners.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (videoDialog && typeof videoDialog.showModal === "function") {
+      videoDialog.showModal();
+    }
   });
-}
+});
 
-updateCountdown();
-setInterval(updateCountdown, 60000);
+videoClosers.forEach((button) => {
+  button.addEventListener("click", () => videoDialog?.close());
+});
+
+videoDialog?.addEventListener("click", (event) => {
+  if (event.target === videoDialog) videoDialog.close();
+});
+
+form?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    if (formMessage) formMessage.textContent = "Completa los campos obligatorios para revisar el flujo.";
+    return;
+  }
+
+  const submitButton = form.querySelector("button[type='submit']");
+  if (submitButton) submitButton.textContent = "Interés registrado";
+  if (formMessage) {
+    formMessage.textContent = "Flujo de revisión concluido. Ningún dato fue enviado.";
+  }
+});

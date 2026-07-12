@@ -1,0 +1,46 @@
+# Fluxo de publicacao
+
+## Objetivo
+
+Manter a landing `ceo.stepupandco.com` ajustavel a partir deste projeto no Codex, versionada no GitHub e publicada na Hostinger sem editar arquivos diretamente no painel da hospedagem.
+
+## Arquitetura decidida
+
+- Fonte de verdade: este repositorio Git, pasta `masterclass-a-charly`.
+- Codigo editavel: `src/index.html`, `src/styles.css`, `src/script.js` e `assets/`.
+- Pacote publicado: `public/`, gerado por `scripts/prepare-public.sh`.
+- Dominio de producao: `ceo.stepupandco.com`.
+- Deploy recomendado: GitHub Actions envia a pasta `public/` para a pasta do dominio na Hostinger por FTP/SFTP.
+
+## Secrets necessarios no GitHub
+
+Configurar em `Settings > Secrets and variables > Actions`:
+
+- `HOSTINGER_FTP_SERVER`: servidor FTP/SFTP informado pela Hostinger.
+- `HOSTINGER_FTP_USERNAME`: usuario FTP/SFTP do dominio.
+- `HOSTINGER_FTP_PASSWORD`: senha ou token FTP/SFTP.
+- `HOSTINGER_FTP_SERVER_DIR`: diretorio remoto do dominio, por exemplo `/public_html/ceo.stepupandco.com/` ou o caminho exato exibido no hPanel.
+
+Nao salvar credenciais em arquivos do projeto.
+
+## Como editar daqui em diante
+
+1. Abrir este projeto no Codex pela pasta `/Volumes/Toshiba/CODEX.CODE /Agencia 007/masterclass-a-charly`.
+2. Pedir ajustes nesta conversa/projeto.
+3. Validar localmente.
+4. Gerar `public/` com `sh scripts/prepare-public.sh`.
+5. Commitar e enviar para `main`.
+6. O GitHub Actions publica automaticamente na Hostinger.
+7. Conferir `https://ceo.stepupandco.com`.
+
+## Bloqueios antes de publicar como pagina final
+
+- Conectar o video oficial.
+- Validar documentalmente as credenciais publicas de Harold.
+- Confirmar data, horario, fuso e politica de gravacao.
+- Integrar formulario, CRM, consentimento e pagina de confirmacao.
+- Revisar visual em desktop e mobile.
+
+## Criterio de aceite
+
+Uma alteracao feita no projeto local deve chegar ao GitHub em `main`, acionar o workflow `Deploy landing to Hostinger` e atualizar `https://ceo.stepupandco.com` sem edicoes manuais na Hostinger.
