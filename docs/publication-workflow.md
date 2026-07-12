@@ -7,6 +7,7 @@ Manter a landing `ceo.stepupandco.com` ajustavel a partir deste projeto no Codex
 ## Arquitetura decidida
 
 - Fonte de verdade: este repositorio Git, pasta `masterclass-a-charly`.
+- Repositorio GitHub: `nquisinski1/CEO.Masterclass2026`.
 - Codigo editavel: `src/index.html`, `src/styles.css`, `src/script.js` e `assets/`.
 - Pacote publicado: `public/`, gerado por `scripts/prepare-public.sh`.
 - Dominio de producao: `ceo.stepupandco.com`.

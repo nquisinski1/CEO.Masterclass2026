@@ -45,7 +45,7 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 - Layout responsivo para desktop e mobile.
 - Formulario ainda funciona apenas como simulacao local.
 - Repositorio Git local iniciado.
-- Repositorio remoto GitHub ainda nao conectado.
+- Repositorio remoto GitHub alvo: `nquisinski1/CEO.Masterclass2026`.
 - Dominio alvo definido: `ceo.stepupandco.com`.
 - Deploy automatico preparado, mas dependente dos secrets da Hostinger no GitHub.
 
