@@ -2,16 +2,24 @@ window.STEPUP_FUNNEL_CONFIG = {
   metaPixelId: "2249459879220653",
   blockedPixelIds: ["978621541831814", "2014625735818543"],
   ga4MeasurementId: "",
-  gtmContainerId: "",
-  ghlRegistrationEndpoint: "",
+  gtmContainerId: "GTM-K3DFK7M7",
   consentVersion: "mx-lfpdppp-v1-2026-07-13",
   eventNameLead: "Lead",
-  thankYouUrl: "./thank-you.html",
+  thankYouUrl: "https://thank-you.stepupandco.com/",
   privacyUrl: "./privacy.html",
   eventSourceUrl: "https://ceo.stepupandco.com/",
+  page: {
+    pageId: "ceo_masterclass_p1",
+    offer: "company_masterclass",
+    funnelStage: "P1_registration",
+    buildVersion: "2026-07-13.1",
+    experimentId: "",
+    variants: [],
+  },
   webinar: {
     title: "Masterclass Privada · StepUp & Company",
     dateLabel: "Fecha y hora enviadas por email",
-    nextStep: "Revise su correo corporativo y agregue el evento a su calendario cuando reciba la confirmación."
-  }
+    nextStep:
+      "Revise su correo corporativo y agregue el evento a su calendario cuando reciba la confirmación.",
+  },
 };
