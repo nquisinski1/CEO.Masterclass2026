@@ -36,12 +36,13 @@ Nao salvar credenciais em arquivos do projeto.
 
 ## Bloqueios antes de publicar como pagina final
 
+- Cumprir e verificar integralmente `../../LANDING_PAGE_FUNNEL_STANDARD.md`.
+- Atualizar `p0-funnel-status.md` com evidencias; nenhum item pode permanecer abaixo de `VERIFIED`.
 - Conectar o video oficial.
 - Validar documentalmente as credenciais publicas de Harold.
 - Confirmar data, horario, fuso e politica de gravacao.
-- Integrar formulario, CRM, consentimento e pagina de confirmacao.
 - Revisar visual em desktop e mobile.
 
 ## Criterio de aceite
 
-Uma alteracao feita no projeto local deve chegar ao GitHub em `main`, acionar o workflow `Deploy landing to Hostinger` e atualizar `https://ceo.stepupandco.com` sem edicoes manuais na Hostinger.
+Uma alteracao feita no projeto local deve chegar ao GitHub em `main`, acionar o workflow `Deploy landing to Hostinger` e atualizar `https://ceo.stepupandco.com` sem edicoes manuais na Hostinger. Deploy tecnico nao autoriza trafego: o P0 precisa estar `VERIFIED` separadamente.

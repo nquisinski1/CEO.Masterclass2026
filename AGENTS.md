@@ -4,6 +4,14 @@
 
 Construir uma landing page executiva de alta conversao para a Masterclass A. Charly da StepUp & Company. A conversao primaria e o registro de CEOs, fundadores e donos de empresas que ainda podem nao conhecer Harold Mesa.
 
+## Padrao central obrigatorio
+
+Antes de alterar formulario, tracking, consentimento, thank-you, publicacao ou analytics, ler:
+
+`../LANDING_PAGE_FUNNEL_STANDARD.md`
+
+Esse documento substitui qualquer instrucao anterior conflitante. O status local deve ser atualizado em `docs/p0-funnel-status.md`.
+
 ## Direcao atual
 
 - Pagina publica em espanhol.
@@ -22,7 +30,11 @@ Construir uma landing page executiva de alta conversao para a Masterclass A. Cha
 5. Evitar texto repetido, secoes genericas e excesso de cards.
 6. Usar um CTA principal consistente: `Reservar mi lugar gratis`.
 7. Nao publicar, criar remoto ou enviar ao GitHub sem aprovacao explicita.
-8. Nao apresentar o formulario como funcional ate integrar o backend.
+8. Nao apresentar o formulario como funcional ate integrar e verificar o GHL ponta a ponta.
+9. Nao enviar trafego enquanto qualquer requisito P0 nao estiver `VERIFIED`.
+10. Nunca usar `Lead` como evento de otimizacao; `QualifiedApplication` no P2 e o unico otimizador.
+11. Nunca enviar PII para GA4, GTM ou dataLayer.
+12. Nao alterar IDs Meta travados sem decisao humana documentada.
 
 ## Criterios de conversao
 
@@ -54,7 +66,7 @@ O primeiro percurso deve responder rapidamente:
 
 ## Estado de publicacao
 
-Projeto em revisao local. Video, credenciais, provas sociais, data e integracao do formulario continuam pendentes.
+Projeto em revisao local. O frontend do funil esta parcialmente preparado, mas o P0 ainda nao esta verificado. Consultar `docs/p0-funnel-status.md` antes de qualquer deploy ou trafego.
 
 ## Operacao GitHub e Hostinger
 

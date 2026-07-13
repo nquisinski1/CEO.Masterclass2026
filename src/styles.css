@@ -358,6 +358,22 @@ h3 {
   background: var(--terracotta-dark);
 }
 
+.button-secondary {
+  border: 1px solid var(--line-dark);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.button-secondary:hover {
+  background: var(--warm);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+  transform: none;
+}
+
 .play-icon {
   display: inline-block;
   width: 0;
@@ -847,6 +863,12 @@ h3 {
   text-transform: none;
 }
 
+.registration-form .consent a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .consent input {
   width: 18px;
   min-height: 18px;
@@ -863,6 +885,135 @@ h3 {
 .form-message {
   color: var(--terracotta);
   font-weight: 700;
+}
+
+.form-message[data-type="info"] {
+  color: var(--muted);
+}
+
+.form-message[data-type="error"] {
+  color: var(--terracotta);
+}
+
+.consent-banner {
+  position: fixed;
+  z-index: 30;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  width: min(560px, calc(100% - 36px));
+  gap: 18px;
+  border: 1px solid var(--line-dark);
+  padding: 20px;
+  background: #fcfbf8;
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.22);
+}
+
+.consent-banner[hidden] {
+  display: none;
+}
+
+.consent-banner p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.consent-banner a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.consent-banner div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thank-you-page,
+.privacy-page {
+  background: var(--navy-deep);
+  color: var(--white);
+}
+
+.thank-you {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+  gap: 42px;
+  padding: var(--page-x);
+}
+
+.thank-you-brand {
+  width: 190px;
+}
+
+.thank-you-card {
+  width: min(880px, 100%);
+  border: 1px solid var(--line-light);
+  padding: clamp(30px, 6vw, 70px);
+  background: rgba(7, 19, 33, 0.88);
+}
+
+.thank-you-card h1,
+.legal-document h1 {
+  max-width: 760px;
+  margin-bottom: 24px;
+  font-size: 4.4rem;
+  line-height: 0.98;
+}
+
+.thank-you-card > p,
+.legal-document p {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.thank-you-details {
+  display: grid;
+  gap: 0;
+  margin: 34px 0;
+  border-top: 1px solid var(--line-light);
+}
+
+.thank-you-details div {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.thank-you-details dt {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.thank-you-details dd {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.legal-document {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: clamp(42px, 8vw, 110px) var(--page-x);
+}
+
+.legal-document a {
+  display: inline-block;
+  margin-bottom: 34px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.legal-document h2 {
+  margin-top: 44px;
+  color: var(--gold);
+  font-size: 2.4rem;
 }
 
 .faq {
@@ -1112,6 +1263,20 @@ footer {
     width: 100%;
   }
 
+  .consent-banner {
+    right: 0;
+    bottom: 64px;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+  }
+
+  .consent-banner div,
+  .consent-banner .button {
+    width: 100%;
+  }
+
   .event-facts div {
     padding: 14px 10px 0;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -1201,6 +1366,16 @@ footer {
 
   footer {
     display: grid;
+  }
+
+  .thank-you-card h1,
+  .legal-document h1 {
+    font-size: 2.8rem;
+  }
+
+  .thank-you-details div {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .mobile-cta {

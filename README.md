@@ -29,13 +29,18 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 - `src/index.html`: estrutura, conteudo e formulario.
 - `src/styles.css`: direcao visual e responsividade.
 - `src/script.js`: video, formulario e interacoes.
+- `src/config.js`: IDs e endpoints de mensuracao, GHL, Meta, GA4 e GTM.
+- `src/thank-you.html`: pagina de confirmacao pos-registro.
+- `src/privacy.html`: aviso de privacidade a ser aprovado juridicamente.
 - `index.html`, `styles.css`, `script.js`: copias geradas para a Hostinger servir pela raiz do repositorio.
 - `assets/`: logos e fotografias reais de Harold Mesa.
 - `docs/masterclass-content-and-landing-strategy.md`: estrategia de conteudo.
 - `docs/landing-content-models-stepup.md`: modelos segmentados.
 - `docs/source-extracts.txt`: extracoes do material original.
 - `docs/conversion-blueprint.md`: arquitetura de conversao.
+- `docs/p0-funnel-status.md`: estado verificavel do funil e bloqueios de conta.
 - `docs/publication-workflow.md`: operacao GitHub -> Hostinger -> dominio.
+- `docs/funnel-implementation.md`: arquitetura P0 de tracking, GHL, consentimento e QA.
 - `scripts/prepare-public.sh`: gera a pasta `public/` e atualiza os arquivos estaticos da raiz.
 - `.github/workflows/deploy-hostinger.yml`: deploy automatico para Hostinger via GitHub Actions.
 
@@ -44,7 +49,7 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 - Modelo ativo: CEO e fundador.
 - Video em primeiro lugar, com poster real de Harold.
 - Layout responsivo para desktop e mobile.
-- Formulario ainda funciona apenas como simulacao local.
+- Formulario real esta preparado no frontend, mas o endpoint GHL ainda nao esta configurado/verificado.
 - Repositorio Git local iniciado.
 - Repositorio remoto GitHub alvo: `nquisinski1/CEO.Masterclass2026`.
 - Dominio alvo definido: `ceo.stepupandco.com`.
@@ -52,9 +57,11 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 
 ## Antes de publicar
 
-1. Inserir o video oficial.
-2. Validar documentalmente as credenciais publicas de Harold.
-3. Adicionar depoimentos ou casos autorizados.
-4. Confirmar data, horario, fuso e politica de gravacao.
-5. Conectar formulario, CRM, consentimento e pagina de confirmacao.
+O gate tecnico obrigatorio esta em `../LANDING_PAGE_FUNNEL_STANDARD.md`. O estado desta LP esta em `docs/p0-funnel-status.md`.
+
+1. Levar todos os itens P0 ao estado `VERIFIED`.
+2. Inserir o video oficial.
+3. Validar documentalmente as credenciais publicas de Harold.
+4. Adicionar depoimentos ou casos autorizados.
+5. Confirmar data, horario, fuso e politica de gravacao.
 6. Fazer revisao visual final em desktop e mobile.

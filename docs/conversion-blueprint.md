@@ -1,5 +1,9 @@
 # Conversion Blueprint - Masterclass A. Charly
 
+## Precondicao P0
+
+Este blueprint orienta mensagem e experiencia, mas nao autoriza lancamento. Formulario, medicao, atribuicao, privacidade e QA devem cumprir `../../LANDING_PAGE_FUNNEL_STANDARD.md`. Qualquer nota antiga sobre placeholder, formulario apenas visual ou disparo de conversao fica subordinada ao padrao central.
+
 ## Objetivo original
 
 Criar uma landing page independente, em HTML, para a Masterclass A. Charly. A pagina deve ser altamente focada em conversao: o visitante precisa entender a promessa, sentir urgencia, confiar na autoridade e completar o registro.
