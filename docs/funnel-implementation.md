@@ -2,39 +2,29 @@
 
 ## Current status
 
-The landing now has the browser-side P0 architecture in place:
+The landing now uses the approved embedded GHL form:
 
-- Required fields: `Nombre`, `Correo corporativo`, `Banda de ingreso`.
-- Optional field: `WhatsApp`.
-- Required privacy consent and optional marketing reminder opt-in.
+- GHL form URL: `https://app.stepupandco.com/widget/form/Ic4yCMY5X2zsR9G54w14`.
+- Form name: `LP/CEO.stepupandco`.
+- Field routing, required fields, success handling and workflow start must be verified inside GHL.
 - Attribution capture for first-touch and last-touch UTMs, `fbclid`, `_fbp`, derived `_fbc`, landing URL, referrer and creative ID from `utm_content`.
 - DataLayer events without PII.
 - Meta Pixel ID locked to `2249459879220653`.
 - `ViewContent` is not used.
-- Browser `Lead` fires only after confirmed GHL success.
-- A shared `event_id` is sent to GHL and used by browser `Lead`.
+- The previous direct local form submit is no longer active while the GHL iframe is embedded.
+- `Lead`, CAPI, deduplication and thank-you routing must be confirmed in the embedded GHL form/workflow.
 - Meta/GA4/GTM scripts are consent-gated until the final privacy policy decides whether PageView may load automatically.
-- Duplicate submits are disabled during request.
-- Failed submissions preserve entered data.
-- Confirmed success redirects to `thank-you.html`.
 
 ## Required GHL configuration
 
-Set the approved endpoint in `src/config.js`:
-
-```js
-ghlRegistrationEndpoint: "https://..."
-```
-
-That endpoint must:
+The embedded GHL form must:
 
 1. Create or upsert exactly one GHL contact.
 2. Start the confirmation/reminder workflow.
-3. Return HTTP 2xx with `{ "success": true }` only after GHL confirms success.
-4. Return non-2xx or `{ "success": false, "code": "..." }` for failure.
-5. Store all attribution and consent fields sent in the payload.
-6. If GHL-native CAPI is enabled, send server `Lead` with the same `event_id`.
-7. Use normalized/consented match keys, IP/UA as available in GHL, `_fbp`, `_fbc`.
+3. Use the dedicated thank-you destination or equivalent GHL confirmation state.
+4. Store all attribution and consent fields available to the GHL form.
+5. If GHL-native CAPI is enabled, send server `Lead` with a deduplication strategy accepted by Meta.
+6. Use normalized/consented match keys, IP/UA as available in GHL, `_fbp`, `_fbc`.
 
 ## Required analytics configuration
 
@@ -49,10 +39,7 @@ Events pushed to `dataLayer`:
 
 - `landing_viewed`
 - `cta_clicked` with `location`
-- `registration_started`
-- `registration_error` with non-PII `code`
-- `registration_completed` with `event_id`
-- `thank_you_viewed` with `event_id`
+- `registration_started`, `registration_error`, `registration_completed` and `thank_you_viewed` only if GHL exposes compatible embed events or the flow redirects to the local thank-you page.
 
 Do not send names, emails, phones or raw form values to GA4/GTM.
 

@@ -806,6 +806,24 @@ h3 {
   background: #fcfbf8;
 }
 
+.ghl-form-shell {
+  gap: 20px;
+}
+
+.ghl-form-frame {
+  width: 100%;
+  min-height: 434px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.ghl-form-frame iframe {
+  display: block;
+  width: 100%;
+  min-height: 434px;
+}
+
 .form-heading {
   display: flex;
   align-items: baseline;

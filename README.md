@@ -49,7 +49,8 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 - Modelo ativo: CEO e fundador.
 - Video em primeiro lugar, com poster real de Harold.
 - Layout responsivo para desktop e mobile.
-- Formulario real esta preparado no frontend, mas o endpoint GHL ainda nao esta configurado/verificado.
+- Formulario GHL oficial incorporado via iframe: `LP/CEO.stepupandco`.
+- Fluxo GHL, contato unico, workflow, CAPI/dedup e thank-you ainda precisam ser verificados ponta a ponta.
 - Repositorio Git local iniciado.
 - Repositorio remoto GitHub alvo: `nquisinski1/CEO.Masterclass2026`.
 - Dominio alvo definido: `ceo.stepupandco.com`.
