@@ -265,8 +265,9 @@
         optimizer_event: "QualifiedApplication_at_P2_only"
       },
       consent: {
-        privacy_required: formData.get("privacy_consent") === "on",
-        marketing_opt_in: formData.get("marketing_opt_in") === "on",
+        privacy_required: true,
+        marketing_opt_in: true,
+        consent_basis: "inline_notice_at_submission",
         version: config.consentVersion || "unversioned",
         timestamp: nowIso(),
         measurement_status: consent?.status || "unset"

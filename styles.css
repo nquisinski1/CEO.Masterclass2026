@@ -855,24 +855,17 @@ h3 {
   border-color: var(--terracotta);
 }
 
-.registration-form .consent {
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  align-items: start;
-  gap: 10px;
-  text-transform: none;
+.form-consent {
+  margin: -6px 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
 }
 
-.registration-form .consent a {
+.form-consent a {
   color: var(--terracotta);
   text-decoration: underline;
   text-underline-offset: 3px;
-}
-
-.consent input {
-  width: 18px;
-  min-height: 18px;
-  margin: 2px 0 0;
 }
 
 .form-message {
