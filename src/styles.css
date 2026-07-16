@@ -6,8 +6,9 @@
   --warm: #e9e3da;
   --ink: #111820;
   --muted: #5c626a;
-  --terracotta: #bd442a;
-  --terracotta-dark: #96351f;
+  --terracotta: #cc482b;
+  --terracotta-dark: #a53821;
+  --cta-glow: rgba(204, 72, 43, 0.34);
   --gold: #d1ae61;
   --white: #ffffff;
   --line-dark: rgba(10, 22, 40, 0.16);
@@ -166,11 +167,26 @@ h3 {
 }
 
 .header-cta {
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--gold);
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 3px;
+  padding: 0 16px;
+  background: var(--terracotta);
+  box-shadow: 0 12px 28px var(--cta-glow);
+  color: var(--white);
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.header-cta:hover {
+  background: var(--terracotta-dark);
+  box-shadow: 0 16px 34px rgba(204, 72, 43, 0.42);
+  transform: translateY(-1px);
 }
 
 .hero {
@@ -350,12 +366,14 @@ h3 {
 }
 
 .button-primary {
-  background: var(--terracotta);
+  background: linear-gradient(135deg, #d85231, var(--terracotta));
+  box-shadow: 0 16px 36px var(--cta-glow), inset 0 0 0 1px rgba(255, 255, 255, 0.14);
   color: var(--white);
 }
 
 .button-primary:hover {
-  background: var(--terracotta-dark);
+  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+  box-shadow: 0 20px 44px rgba(204, 72, 43, 0.44), inset 0 0 0 1px rgba(255, 255, 255, 0.16);
 }
 
 .play-icon {
@@ -966,6 +984,79 @@ footer {
 
 .mobile-cta {
   display: none;
+}
+
+.registration-popup {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 42px);
+  background: rgba(3, 9, 20, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.registration-popup[hidden] {
+  display: none;
+}
+
+.registration-popup-open {
+  overflow: hidden;
+}
+
+.registration-popup-panel {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(90vh, 860px);
+  overflow: auto;
+  border: 1px solid var(--line-dark);
+  padding: clamp(22px, 4vw, 34px);
+  background: #fcfbf8;
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.42);
+}
+
+.registration-popup-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.registration-popup-header .section-index {
+  margin-bottom: 8px;
+}
+
+.registration-popup-header h2 {
+  margin-bottom: 0;
+  font-size: clamp(2.25rem, 5vw, 3.6rem);
+}
+
+.registration-popup-close {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.registration-popup-copy {
+  margin: 18px 0 20px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.registration-popup-frame {
+  min-height: 575px;
+  border: 1px solid rgba(10, 22, 40, 0.08);
 }
 
 .dialog-close {

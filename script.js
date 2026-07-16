@@ -4,6 +4,8 @@
   const consentBanner = document.querySelector("[data-consent-banner]");
   const consentAccept = document.querySelector("[data-consent-accept]");
   const consentDecline = document.querySelector("[data-consent-decline]");
+  const registrationPopup = document.querySelector("[data-registration-popup]");
+  const registrationPopupClose = document.querySelector("[data-registration-popup-close]");
   const consentKey = "stepup_consent_state";
   const attributionKey = "stepup_first_touch";
   const lastTouchKey = "stepup_last_touch";
@@ -250,16 +252,55 @@
     return "body";
   }
 
+  function openRegistrationPopup(source = "manual") {
+    if (!registrationPopup || document.body.classList.contains("thank-you-page")) return;
+    registrationPopup.hidden = false;
+    document.body.classList.add("registration-popup-open");
+    pushEvent("registration_popup_opened", { source });
+    registrationPopupClose?.focus({ preventScroll: true });
+  }
+
+  function closeRegistrationPopup(reason = "dismissed") {
+    if (!registrationPopup) return;
+    registrationPopup.hidden = true;
+    document.body.classList.remove("registration-popup-open");
+    pushEvent("registration_popup_closed", { reason });
+  }
+
   function setupCtaTracking() {
     document.querySelectorAll('a[href="#registro"]').forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (event) => {
         const location = getCtaLocation(link);
         pushEvent("cta_clicked", {
           location,
           cta_id: location + "_registro",
           destination: link.getAttribute("href"),
         });
+        if (registrationPopup) {
+          event.preventDefault();
+          openRegistrationPopup("cta_" + location);
+        }
       });
+    });
+  }
+
+  function setupRegistrationPopup() {
+    if (!registrationPopup || document.body.classList.contains("thank-you-page")) return;
+
+    window.setTimeout(() => {
+      openRegistrationPopup("page_load");
+    }, 450);
+
+    registrationPopupClose?.addEventListener("click", () => closeRegistrationPopup("close_button"));
+
+    registrationPopup.addEventListener("click", (event) => {
+      if (event.target === registrationPopup) closeRegistrationPopup("backdrop");
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !registrationPopup.hidden) {
+        closeRegistrationPopup("escape");
+      }
     });
   }
 
@@ -397,6 +438,7 @@
   setupConsentBanner();
   setupConsentButtons();
   setupCtaTracking();
+  setupRegistrationPopup();
   setupSectionTracking();
   setupScrollDepth();
   setupWebVitals();
