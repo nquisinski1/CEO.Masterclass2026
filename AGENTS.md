@@ -12,6 +12,12 @@ Antes de alterar formulario, tracking, consentimento, thank-you, publicacao ou a
 
 Esse documento substitui qualquer instrucao anterior conflitante. O status local deve ser atualizado em `docs/p0-funnel-status.md`.
 
+A thank-you page central da campanha esta em:
+
+`../masterclass-a-charly-thank-you`
+
+Este projeto deve redirecionar para a URL publicada desse modelo apos sucesso real no GHL. `src/thank-you.html` e somente um prototipo local anterior e nao deve se tornar uma segunda fonte de producao.
+
 ## Direcao atual
 
 - Pagina publica em espanhol.
@@ -35,6 +41,7 @@ Esse documento substitui qualquer instrucao anterior conflitante. O status local
 10. Nunca usar `Lead` como evento de otimizacao; `QualifiedApplication` no P2 e o unico otimizador.
 11. Nunca enviar PII para GA4, GTM ou dataLayer.
 12. Nao alterar IDs Meta travados sem decisao humana documentada.
+13. Nao criar ou publicar uma thank-you exclusiva deste publico.
 
 ## Criterios de conversao
 

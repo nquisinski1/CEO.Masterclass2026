@@ -10,7 +10,7 @@ Esta LP nao esta liberada para trafego. Ha implementacao preparatoria no fronten
 
 | Area | Estado | Evidencia atual | Falta para VERIFIED |
 |---|---|---|---|
-| P0.0 GHL | `IMPLEMENTED_UNVERIFIED` | Form oficial GHL `LP/CEO.stepupandco` incorporado via iframe | Confirmar upsert unico, workflow unico, sucesso/erro, thank-you e teste ponta a ponta dentro do GHL |
+| P0.0 GHL | `IMPLEMENTED_UNVERIFIED` | Form oficial GHL `LP/CEO.stepupandco` incorporado via iframe; thank-you com VSL e orientacao construida | Confirmar upsert unico, workflow unico, redirect real, data oficial, VSL e teste ponta a ponta dentro do GHL |
 | P0.1 Meta | `IMPLEMENTED_UNVERIFIED` | Pixel permitido travado no frontend; `ViewContent` removido; P1 declara `QualifiedApplication` como otimizador somente no P2 | Confirmar como o embed/GHL dispara `Lead`, CAPI servidor, dedup e EMQ; validar que Events Manager otimiza apenas `QualifiedApplication` |
 | P0.2 Atribuicao | `IMPLEMENTED_UNVERIFIED` | First/last touch, UTMs, IDs, `_fbp` e `_fbc` preparados | Confirmar persistencia no contato GHL e tabela dos 15 criativos |
 | P0.3 GTM/GA4 | `BLOCKED_ACCOUNT` | Eventos no dataLayer preparados | IDs GTM/GA4, configuracao, DebugView e auditoria sem PII |

@@ -12,14 +12,13 @@ window.STEPUP_FUNNEL_CONFIG = {
     pageId: "ceo_masterclass_p1",
     offer: "company_masterclass",
     funnelStage: "P1_registration",
-    buildVersion: "2026-07-13.1",
+    buildVersion: "2026-07-16.2",
     experimentId: "",
     variants: [],
   },
   webinar: {
     title: "Masterclass Privada · StepUp & Company",
-    dateLabel: "Fecha y hora enviadas por email",
-    nextStep:
-      "Revise su correo corporativo y agregue el evento a su calendario cuando reciba la confirmación.",
+    dateLabel: "5 de agosto · 7:00 p. m. · hora de Panamá",
+    nextStep: "Revise su correo corporativo y agregue el evento a su calendario.",
   },
 };

@@ -27,6 +27,7 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 ## Estrutura
 
 - `src/index.html`: estrutura, conteudo e formulario.
+- `src/thank-you.html`: confirmacao, VSL e conteudo de valor pos-registro.
 - `src/styles.css`: direcao visual e responsividade.
 - `src/script.js`: video, formulario e interacoes.
 - `src/config.js`: IDs e endpoints de mensuracao, GHL, Meta, GA4 e GTM.
@@ -39,6 +40,7 @@ Leia `docs/publication-workflow.md` antes de conectar o remoto ou publicar.
 - `docs/source-extracts.txt`: extracoes do material original.
 - `docs/conversion-blueprint.md`: arquitetura de conversao.
 - `docs/p0-funnel-status.md`: estado verificavel do funil e bloqueios de conta.
+- `docs/thank-you-page-model.md`: estrutura e configuracao da pagina de agradecimento.
 - `docs/publication-workflow.md`: operacao GitHub -> Hostinger -> dominio.
 - `docs/funnel-implementation.md`: arquitetura P0 de tracking, GHL, consentimento e QA.
 - `scripts/prepare-public.sh`: gera a pasta `public/` e atualiza os arquivos estaticos da raiz.
